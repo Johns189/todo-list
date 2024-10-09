@@ -1,5 +1,6 @@
 let userInput = document.querySelector("#user-input");
 let todolistElement = document.querySelector("#todo-list");
+userInput.addEventListener("submit", handleSubmit);
 
 /* //originalen
 let toStore = [1, 2, 3, 4]
@@ -49,8 +50,6 @@ function handleSubmit(event) {
   renderTodos();
 }
 
-userInput.addEventListener("submit", handleSubmit);
-
 // Denne leser av dataen i et form element
 // og lager en JavaSkript objekt for Gjøremålene
 
@@ -70,11 +69,35 @@ function createTodoCard(todoObject) {
   // Lag alle elementene vi trenger
   let todoCard = document.createElement("li");
   let titleElement = document.createElement("h2");
+  let deleteButton = document.createElement("button");
 
   // Sett de samme til ett element
   todoCard.append(titleElement);
+  todoCard.append(deleteButton);
 
+  //Konfigurer elementene med korrekt verdier
   titleElement.textContent = todoObject.title;
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", () => {
+    console.log("Deleting todo");
+    console.log(todoObject);
+    //Fjern "todoObjekt" fra "todos" listen
+    let filterTodos = todos.filter((todo) => {
+      if (todo.title === todoObject.title) {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    console.log(filterTodos);
+
+    todos = filterTodos;
+
+    let jsonTodos = JSON.stringify(todos);
+    localStorage.setItem("todos", jsonTodos);
+
+    renderTodos();
+  });
 
   return todoCard;
 }
