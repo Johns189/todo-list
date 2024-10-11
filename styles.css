@@ -1,0 +1,20 @@
+:root {
+    --color-primery: coral;
+    --color-secondary: cornflowerblue;
+    --color-white: white; 
+    --color-black: black;
+}
+
+/* Adjektiv Syiling */
+.text-center {
+    text-align: center;
+}
+
+.bg-primary {
+    background-color: var(--color-primery);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+

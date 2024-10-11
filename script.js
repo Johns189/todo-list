@@ -76,6 +76,10 @@ function createTodoCard(todoObject) {
   todoCard.append(deleteButton);
 
   //Konfigurer elementene med korrekt verdier
+  todoCard.className = "bg-emerald-300 w-full flex justify-between";
+  titleElement.className = "underline";
+  deleteButton.className = "bg-red-400 px-4 py-2 rounded hover:bg-red-300";
+
   titleElement.textContent = todoObject.title;
   deleteButton.textContent = "Delete";
   deleteButton.addEventListener("click", () => {
