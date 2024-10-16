@@ -84,7 +84,7 @@ function createTodoCard(todoObject) {
   deleteButton.append(checkMark);
 
   //Konfigurer elementene med korrekt verdier
-  todoCard.className = "bg-teal-300 w-full rounded-xl flex justify-between";
+  todoCard.className = "bg-teal-50 w-full rounded-xl flex justify-between";
   titleElement.className = "underline";
   deleteButton.className = "bg-green-400 px-4 py-2 rounded-xl hover:bg-red-300";
   checkMark.src = "icon-checkmark.svg";
